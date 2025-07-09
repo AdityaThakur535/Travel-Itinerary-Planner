@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Travel Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .signup-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--white-color);
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--title-color);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--text-color-light);
+            border-radius: 0.5rem;
+            font-size: var(--normal-font-size);
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--first-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 0.5rem;
+            font-size: var(--normal-font-size);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .signup-btn:hover {
+            background: var(--first-color-alt);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .error-message {
+            color: #ff3333;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Travel Explorer</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="hotels.html" class="nav__link">Hotels</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="flights.html" class="nav__link">Flights</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="login.html" class="nav__link">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="signup-container">
+            <h2 class="section__title">Create an Account</h2>
+            <form id="signupForm" onsubmit="return validateForm(event)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <div class="error-message" id="username-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <div class="error-message" id="confirm-password-error"></div>
+                </div>
+
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(elem => {
+                elem.style.display = 'none';
+            });
+
+            let isValid = true;
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Username validation
+            if (username.length < 3) {
+                document.getElementById('username-error').textContent = 'Username must be at least 3 characters long';
+                document.getElementById('username-error').style.display = 'block';
+                isValid = false;
+            }

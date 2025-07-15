@@ -1,0 +1,494 @@
+/* Integrated Features Styles */
+
+/* Authentication Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.auth-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+}
+
+.login-btn {
+    background: var(--first-color);
+}
+
+.signup-btn {
+    background: var(--first-color-alt);
+}
+
+.auth-btn:hover {
+    background: var(--first-color-second);
+}
+
+/* Hotel Section */
+.hotels-section {
+    padding: 4rem 0;
+    background: var(--body-color);
+}
+
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.hotel-card {
+    background: var(--white-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+}
+
+.hotel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hotel-details {
+    padding: 1.5rem;
+}
+
+.hotel-name {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-5);
+}
+
+.hotel-price {
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: var(--mb-0-75);
+}
+
+.hotel-rating {
+    color: #ffd700;
+    margin-bottom: var(--mb-0-75);
+}
+
+.hotel-location {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+/* Flight Section */
+.flights-section {
+    padding: 4rem 0;
+    background: var(--body-color);
+}
+
+.search-form {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    align-items: end;
+}
+
+.form-group {
+    margin-bottom: var(--mb-1);
+}
+
+.form-group label {
+    display: block;
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-5);
+    font-weight: var(--font-medium);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--text-color-light);
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+}
+
+.flight-card {
+    background: var(--white-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: center;
+}
+
+.flight-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.airline-name {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+.flight-time {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+
+.flight-duration {
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    text-align: center;
+    position: relative;
+}
+
+.flight-duration::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    right: -1rem;
+    height: 1px;
+    background: var(--text-color-light);
+    z-index: 1;
+}
+
+.flight-duration span {
+    background: var(--white-color);
+    padding: 0 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.flight-price {
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    text-align: right;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .auth-buttons {
+        margin: 1rem 0 0;
+        justify-content: center;
+    }
+
+    .search-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flight-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .flight-price {
+        text-align: center;
+    }
+}
+
+/* Places Section */
+.places-section {
+    padding: 4rem 0;
+    background: var(--body-color);
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.place-card {
+    background: var(--white-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+}
+
+.place-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.place-details {
+    padding: 1.5rem;
+}
+
+.place-name {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-5);
+}
+
+.place-description {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.place-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-0-75);
+}
+
+.place-rating i {
+    color: #ffd700;
+    margin-right: 0.25rem;
+}
+
+.place-rating span {
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+}
+
+/* Enhanced Offers Section */
+.offers-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--first-color) 0%, var(--first-color-alt) 100%);
+    color: var(--white-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.offers-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/pattern.png') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.offer-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.offer-card:hover::before {
+    transform: translateX(100%);
+}
+
+.offer-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--white-color), rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.offer-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2rem;
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-semi-bold);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.offer-title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--white-color), rgba(255, 255, 255, 0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.offer-description {
+    font-size: var(--normal-font-size);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.offer-price {
+    font-size: 2rem;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 1rem;
+    color: var(--white-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.offer-validity {
+    font-size: var(--smaller-font-size);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.offer-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.offer-button:hover {
+    background: var(--white-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.offer-features {
+    margin: 1.5rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.offer-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.offer-feature i {
+    margin-right: 0.5rem;
+    font-size: var(--normal-font-size);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .offer-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .offer-title {
+        font-size: var(--h3-font-size);
+    }
+
+    .offer-price {
+        font-size: 1.75rem;
+    }
+}
+
+/* Animation for new offers */
+@keyframes newOffer {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.offer-card.new {
+    animation: newOffer 0.6s ease-out forwards;
+}
+
+/* Special effects for premium offers */
+.offer-card.premium {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.offer-card.premium .offer-tag {
+    background: linear-gradient(135deg, #ffd700, #ffa500);
+    color: var(--title-color);
+    border: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .places-grid,
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+}
